@@ -47,6 +47,10 @@ h4 {
     font-family: "Times New Roman", Times, serif;
 }
 
+.jumbotron img {
+    padding: 35px 35px 35px 35px;
+}
+
 .container-fluid {
     padding: 60px 80px;
 }
