@@ -1,0 +1,5 @@
+name = "perfofund"
+main = "src/index.js" # or leave out if you only have static HTML
+
+[assets]
+directory = "."
