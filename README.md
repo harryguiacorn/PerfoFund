@@ -4,7 +4,7 @@
 
 An integrated, performance-based AI system for investment banks, pension funds, hedge fund
 groups, financial institutions and capital markets. Built with **Astro 5 + Tailwind CSS v4 +
-TypeScript**, deployed on **Cloudflare Pages**.
+TypeScript**, deployed on **Cloudflare Workers Static Assets**.
 
 ## Stack
 
@@ -51,15 +51,29 @@ Requires **Node 22+** (see `.nvmrc`).
 └── .github/workflows/ci.yml  # Lint + build on every PR
 ```
 
-## Deployment (Cloudflare Pages)
+## Deployment (Cloudflare Workers Static Assets)
 
-Build command: `npm run build` · Output directory: `dist`
+`wrangler.jsonc` points Wrangler at `./dist`, so **the Astro build must run before
+`wrangler deploy`** — otherwise Wrangler fails with:
 
-Or with Wrangler:
+> `The directory specified by the "assets.directory" field … does not exist: …/dist`
+
+### Cloudflare dashboard (Workers Builds)
+
+Set these in **Settings → Build**:
+
+| Setting        | Value                 |
+| -------------- | --------------------- |
+| Build command  | `npm run build`       |
+| Deploy command | `npx wrangler deploy` |
+
+> ⚠️ If the Build command is empty, `dist/` won't exist and the deploy fails.
+> Alternatively, set the Deploy command to `npm run deploy` (builds, then deploys).
+
+### Manual deploy
 
 ```bash
-npm run build
-npx wrangler pages deploy dist --project-name=perfofund
+npm run deploy   # npm run build && wrangler deploy
 ```
 
 > Update `site` in `astro.config.mjs` and the sitemap URL in `public/robots.txt`
