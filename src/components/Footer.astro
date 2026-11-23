@@ -1,0 +1,73 @@
+---
+const year = new Date().getFullYear();
+
+const nav = [
+  { href: "#introduction", label: "Introduction" },
+  { href: "#product", label: "Product" },
+  { href: "#riskmanagement", label: "Risk Management" },
+  { href: "#forwardlooking", label: "Forward Looking" },
+  { href: "#contact", label: "Contact" },
+  { href: "#disclaimer", label: "Disclaimer" },
+];
+---
+
+<footer class="bg-navy-950 text-slate-400">
+  <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+    <div class="grid gap-10 md:grid-cols-3">
+      <div>
+        <a href="#top" class="inline-block rounded-xl bg-white px-4 py-2" aria-label="PerfoFund — back to top">
+          <picture>
+            <source srcset="/asset/perfofund-logo.webp" type="image/webp" />
+            <img src="/asset/perfofund-logo.png" alt="PerfoFund" width="160" height="51" loading="lazy" class="h-9 w-auto" />
+          </picture>
+        </a>
+        <p class="mt-5 max-w-xs text-sm leading-relaxed">
+          Optimised Performance — AI performance intelligence for investment banks, pension funds,
+          hedge funds and capital markets.
+        </p>
+      </div>
+
+      <nav aria-label="Footer">
+        <h2 class="font-display text-sm font-bold tracking-wide text-white uppercase">Explore</h2>
+        <ul class="mt-4 space-y-2.5">
+          {
+            nav.map((item) => (
+              <li>
+                <a href={item.href} class="text-sm transition hover:text-white">{item.label}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <div>
+        <h2 class="font-display text-sm font-bold tracking-wide text-white uppercase">Contact</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li>
+            <a href="mailto:harry@perfozone.com" class="transition hover:text-white">harry@perfozone.com</a>
+          </li>
+          <li>
+            <address class="not-italic">
+              34-35 Hatton Garden, Holborn<br />
+              London EC1N 8DX, United Kingdom
+            </address>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
+      <p class="text-xs">Copyright © {year}, All Rights Reserved <strong class="text-slate-200">PerfoFund Limited</strong></p>
+      <p class="text-xs text-slate-500">Please return to our site at a later time.</p>
+    </div>
+  </div>
+
+  <button
+    id="back-to-top"
+    type="button"
+    class="fixed right-5 bottom-5 z-50 flex h-11 w-11 translate-y-20 items-center justify-center rounded-full bg-brand-600 text-white shadow-lift transition-all duration-300 hover:bg-brand-700"
+    aria-label="Back to top"
+  >
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+</footer>

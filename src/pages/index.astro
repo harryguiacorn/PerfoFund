@@ -1,0 +1,28 @@
+---
+import Contact from "../components/Contact.astro";
+import Disclaimer from "../components/Disclaimer.astro";
+import Footer from "../components/Footer.astro";
+import ForwardLooking from "../components/ForwardLooking.astro";
+import Hero from "../components/Hero.astro";
+import Introduction from "../components/Introduction.astro";
+import Navbar from "../components/Navbar.astro";
+import Product from "../components/Product.astro";
+import RiskManagement from "../components/RiskManagement.astro";
+import WhoWeAre from "../components/WhoWeAre.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <Navbar />
+  <main id="main">
+    <Hero />
+    <Introduction />
+    <WhoWeAre />
+    <Product />
+    <RiskManagement />
+    <ForwardLooking />
+    <Contact />
+    <Disclaimer />
+  </main>
+  <Footer />
+</BaseLayout>

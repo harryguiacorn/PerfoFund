@@ -1,0 +1,83 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+
+const ratios = [
+  { name: "Quick Ratio", desc: "Short-term liquidity strength" },
+  { name: "Debt to Equity", desc: "Leverage and balance-sheet discipline" },
+  { name: "Operating Profit Margin", desc: "Core operating efficiency" },
+  { name: "Return on Assets", desc: "Asset productivity" },
+  { name: "Return on Equity", desc: "Shareholder return efficiency" },
+  { name: "P/E Ratio", desc: "Valuation vs. earnings" },
+  { name: "P/BV Ratio", desc: "Valuation vs. book value" },
+  { name: "EPS Growth", desc: "Earnings momentum" },
+];
+
+const sectors = [
+  "Water & Power",
+  "Healthcare",
+  "Pharmaceuticals",
+  "Media & Telecom",
+  "Oil & Gas",
+  "Financial Services",
+];
+---
+
+<section id="product" class="relative scroll-mt-24 overflow-hidden bg-navy-950 py-20 text-white lg:py-28">
+  <div class="bg-grid absolute inset-0" aria-hidden="true"></div>
+  <div class="bg-mesh absolute inset-0" aria-hidden="true"></div>
+
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <SectionHeading
+      dark
+      eyebrow="Product"
+      title="Company Shares Selection Strategy — Performance Report (CSSS)"
+      description="The sophisticated CSSS operates exclusively on the PerfoFund blockchain platform. Its score is the result of analytical performance reports that assess listed stocks strictly on financial ratios of the listed companies."
+    />
+
+    <div class="mt-12 grid gap-10 lg:grid-cols-5">
+      <div class="reveal lg:col-span-3">
+        <h3 class="font-mono text-xs font-semibold tracking-widest text-slate-400 uppercase">The 8 CSSS indicators</h3>
+        <ul class="mt-5 grid gap-3 sm:grid-cols-2">
+          {
+            ratios.map((r, i) => (
+              <li class="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.05] p-4 backdrop-blur transition hover:border-brand-500/40 hover:bg-white/[0.08]">
+                <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-600/20 font-mono text-xs font-bold text-brand-400">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span>
+                  <span class="block font-display text-sm font-bold">{r.name}</span>
+                  <span class="mt-0.5 block text-xs text-slate-400">{r.desc}</span>
+                </span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="reveal lg:col-span-2" style="--reveal-delay: 120ms">
+        <div class="rounded-3xl border border-white/10 bg-white/[0.05] p-6 backdrop-blur sm:p-8">
+          <h3 class="font-display text-lg font-bold">Where CSSS looks for opportunity</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-300">
+            The best investment opportunities based on aggressive growth profile, high equity ratio
+            and countercyclical characteristics — exhibiting relatively high barriers to entry.
+          </p>
+          <ul class="mt-5 flex flex-wrap gap-2">
+            {
+              sectors.map((s) => (
+                <li class="rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-xs font-medium text-slate-200">{s}</li>
+              ))
+            }
+          </ul>
+
+          <div class="mt-7 rounded-2xl bg-gradient-to-br from-brand-600 to-accent-500 p-5">
+            <p class="font-display text-2xl font-extrabold">Zero management fees</p>
+            <p class="mt-1 text-sm text-white/85">
+              A secure platform backed by strong management and associate technical teams — built to
+              accumulate a large pool of investors exploring performance without fee drag.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

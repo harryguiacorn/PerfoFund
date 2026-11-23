@@ -1,0 +1,26 @@
+---
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Page not found — PerfoFund" description="The page you requested could not be found.">
+  <Navbar />
+  <main id="main" class="flex min-h-[70vh] items-center bg-navy-950 pt-24 text-white">
+    <div class="mx-auto max-w-2xl px-4 py-24 text-center sm:px-6">
+      <p class="font-mono text-sm font-semibold tracking-widest text-brand-400 uppercase">404</p>
+      <h1 class="mt-4 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">Page not found</h1>
+      <p class="mt-4 text-slate-300">
+        The page you requested doesn’t exist or has moved. Return to the homepage to continue
+        exploring PerfoFund.
+      </p>
+      <a
+        href="/"
+        class="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-500"
+      >
+        Back to homepage
+      </a>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
