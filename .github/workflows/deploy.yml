@@ -1,0 +1,39 @@
+name: Deploy to Cloudflare
+
+# Deploys the Astro build to Cloudflare Workers Static Assets on every
+# push to main. This path does NOT depend on the Cloudflare dashboard
+# Build command — the build runs here, then `wrangler deploy` uploads dist/.
+#
+# Required GitHub secrets (Settings → Secrets and variables → Actions):
+#   CLOUDFLARE_API_TOKEN   — API token with "Edit Cloudflare Workers" permission
+#   CLOUDFLARE_ACCOUNT_ID  — your Cloudflare account ID
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build (Astro)
+        run: npm run build
+
+      - name: Deploy to Cloudflare Workers
+        run: npx wrangler deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
