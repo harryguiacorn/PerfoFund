@@ -11,18 +11,21 @@
     "astro": "astro",
     "check": "biome check .",
     "format": "biome format --write .",
-    "lint": "biome lint ."
+    "lint": "biome lint .",
+    "deploy": "npm run build && wrangler deploy",
+    "cf:dev": "npm run build && wrangler dev"
   },
   "dependencies": {
-    "astro": "^5.13.0",
-    "@astrojs/sitemap": "^3.4.0"
+    "@astrojs/sitemap": "^3.4.0",
+    "astro": "^5.13.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
     "@biomejs/biome": "^2.1.0",
     "@tailwindcss/vite": "^4.1.0",
     "tailwindcss": "^4.1.0",
-    "typescript": "^5.8.0"
+    "typescript": "^5.8.0",
+    "wrangler": "^4.166.0"
   },
   "engines": {
     "node": ">=22"
