@@ -48,7 +48,7 @@ Requires **Node 22+** (see `.nvmrc`).
 │   ├── pages/                # index.astro, 404.astro
 │   ├── scripts/main.ts       # Vanilla JS: nav, reveal, form
 │   └── styles/global.css     # Tailwind v4 theme + design tokens
-└── .github/workflows/ci.yml  # Lint + build on every PR
+└── .github/workflows/        # ci.yml (lint + build), deploy.yml (Cloudflare)
 ```
 
 ## Deployment (Cloudflare Workers Static Assets)
