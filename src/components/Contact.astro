@@ -1,0 +1,105 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+---
+
+<section id="contact" class="scroll-mt-24 bg-white py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <SectionHeading
+      eyebrow="Contact"
+      title="Get in touch"
+      description="Tell us about your fund, mandate or platform requirements. We reply to every serious enquiry."
+      align="center"
+    />
+
+    <div class="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-2">
+      <a
+        href="mailto:harry@perfozone.com"
+        class="reveal group rounded-3xl border border-slate-200 bg-slate-50 p-7 shadow-card transition hover:-translate-y-0.5 hover:shadow-lift"
+      >
+        <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-600 text-white">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        </span>
+        <h3 class="mt-4 font-display text-lg font-bold text-navy-900">Email</h3>
+        <p class="mt-1 font-medium text-brand-600 group-hover:underline">harry@perfozone.com</p>
+        <p class="mt-2 text-sm text-slate-500">For partnerships, investors and platform enquiries.</p>
+      </a>
+
+      <div class="reveal rounded-3xl border border-slate-200 bg-slate-50 p-7 shadow-card" style="--reveal-delay: 80ms">
+        <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-900 text-white">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        </span>
+        <h3 class="mt-4 font-display text-lg font-bold text-navy-900">Main Office</h3>
+        <address class="mt-1 font-medium text-slate-700 not-italic">
+          34-35 Hatton Garden, Holborn<br />
+          London EC1N 8DX, United Kingdom
+        </address>
+        <p class="mt-2 text-sm text-slate-500">Meetings by appointment.</p>
+      </div>
+    </div>
+
+    <!-- Contact form (Formspree endpoint preserved from legacy site) -->
+    <div class="reveal mx-auto mt-8 max-w-5xl rounded-3xl border border-slate-200 bg-white p-6 shadow-card sm:p-8" style="--reveal-delay: 160ms">
+      <h3 class="font-display text-xl font-bold text-navy-900">Leave us a message</h3>
+      <form
+        id="contact-form"
+        name="contact"
+        method="post"
+        action="https://formspree.io/f/mjvnlbdg"
+        class="mt-6 grid gap-5 sm:grid-cols-2"
+        novalidate
+      >
+        <div>
+          <label for="full-name" class="block text-sm font-semibold text-navy-900">Full name</label>
+          <input
+            id="full-name"
+            name="name"
+            type="text"
+            autocomplete="name"
+            required
+            placeholder="Jane Smith"
+            class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-brand-600 focus:ring-2 focus:ring-brand-600/20 focus:outline-none"
+          />
+        </div>
+        <div>
+          <label for="email-address" class="block text-sm font-semibold text-navy-900">Email address</label>
+          <input
+            id="email-address"
+            name="_replyto"
+            type="email"
+            autocomplete="email"
+            required
+            placeholder="jane@fund.com"
+            class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-brand-600 focus:ring-2 focus:ring-brand-600/20 focus:outline-none"
+          />
+        </div>
+        <div class="sm:col-span-2">
+          <label for="message" class="block text-sm font-semibold text-navy-900">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            required
+            placeholder="Tell us about your requirements…"
+            class="mt-2 w-full resize-y rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-brand-600 focus:ring-2 focus:ring-brand-600/20 focus:outline-none"
+          ></textarea>
+        </div>
+
+        <!-- Honeypot (spam trap) -->
+        <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <input type="hidden" name="_subject" value="Contact Form Submission — PerfoFund" />
+
+        <div class="flex flex-wrap items-center gap-4 sm:col-span-2">
+          <button
+            id="contact-submit"
+            type="submit"
+            class="inline-flex items-center gap-2 rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            Send Message
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+          </button>
+          <p id="form-status" role="status" aria-live="polite" class="text-sm font-medium text-slate-600"></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

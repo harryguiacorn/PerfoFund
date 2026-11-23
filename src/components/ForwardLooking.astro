@@ -1,0 +1,82 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+
+const capabilities = [
+  {
+    title: "Automated Algorithmic Trading",
+    text: "Software platform, API and services delivering automated algorithmic trading that optimises digital asset operations.",
+    icon: "M13 2 3 14h7l-1 8 10-12h-7l1-8z",
+  },
+  {
+    title: "Smart Order Routing",
+    text: "Customised trading solutions with smart order routing across global venues.",
+    icon: "M4 4v6h6M20 20v-6h-6M20 9a8 8 0 0 0-14.9-3M4 15a8 8 0 0 0 14.9 3",
+  },
+  {
+    title: "100+ Crypto Exchanges",
+    text: "Connectivity to over 100 of the top crypto exchanges globally from a single platform.",
+    icon: "M12 2v4M12 18v4M2 12h4M18 12h4M5 5l2.5 2.5M16.5 16.5 19 19M19 5l-2.5 2.5M7.5 16.5 5 19",
+  },
+  {
+    title: "Multi-Asset Connectivity",
+    text: "Institutional capabilities bridging digital assets with traditional forex, derivatives and equities trading.",
+    icon: "M3 3v18h18M7 15l4-6 4 3 5-8",
+  },
+  {
+    title: "API & Platform Services",
+    text: "A multilayer digital and search engine platform serving retail investors, banks and hedge funds.",
+    icon: "M8 6l-6 6 6 6M16 6l6 6-6 6M13 4l-2 16",
+  },
+  {
+    title: "Institutional Grade",
+    text: "Bridging the gap for digital asset trading with the rigour of traditional institutional platforms.",
+    icon: "M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6",
+  },
+];
+---
+
+<section id="forwardlooking" class="scroll-mt-24 bg-slate-50 py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <SectionHeading
+      eyebrow="Forward Looking"
+      title="A multilayer platform bridging digital and traditional markets"
+      description="PerfoFund's software platform, API and services deliver automated algorithmic trading, smart order routing and customised trading solutions — with institutional capabilities across forex, derivatives and equities."
+    />
+
+    <ul class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        capabilities.map((c, i) => (
+          <li class="reveal rounded-3xl border border-slate-200 bg-white p-6 shadow-card transition hover:-translate-y-1 hover:shadow-lift" style={`--reveal-delay: ${(i % 3) * 80}ms`}>
+            <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={c.icon}/></svg>
+            </span>
+            <h3 class="mt-4 font-display text-lg font-bold text-navy-900">{c.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{c.text}</p>
+          </li>
+        ))
+      }
+    </ul>
+
+    <!-- Networking banner -->
+    <div class="reveal relative mt-14 overflow-hidden rounded-3xl shadow-lift">
+      <img
+        src="/asset/networking.webp"
+        alt=""
+        width="1600"
+        height="1066"
+        loading="lazy"
+        decoding="async"
+        class="h-64 w-full object-cover sm:h-80"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-950/60 to-transparent" aria-hidden="true"></div>
+      <div class="absolute inset-0 flex items-center">
+        <div class="max-w-lg px-6 sm:px-10">
+          <p class="font-display text-2xl font-extrabold text-white sm:text-3xl">Connected markets. Knowledge-driven investors.</p>
+          <p class="mt-2 text-sm leading-relaxed text-slate-300 sm:text-base">
+            Financial connectivity between capital markets and the investors who use them best.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

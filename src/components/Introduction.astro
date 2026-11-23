@@ -1,0 +1,87 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+
+const paragraphs = [
+  "We are on the verge of developing and launching an integrated performance-based system solution for investment banks, pension funds, hedge fund groups, financial institutions and capital markets.",
+  "Our innovative Artificial Intelligence facilitates investment potential for wealth creation and fund quality enhancement — providing financial connectivity between capital markets and knowledge-driven investors.",
+  "The PerfoFund AI System provides multi-strategy capabilities based on enhanced neural intelligence: self-learning pattern recognition, analysis of event-driven performance and alternative Beta solutions across multi-lateral capital markets platforms.",
+  "The solution takes advantage of self-generating ideas, concepts and predictive strategies through inventive, methodical thinking on near- or real-time pricing structures and overlay services for high-yielding investment solutions.",
+];
+
+const pipeline = [
+  {
+    title: "Data Sources",
+    items: ["3rd-party operational systems", "Custom-developed systems", "Financial applications"],
+  },
+  {
+    title: "ETL & Data Quality",
+    items: ["Data Quality Framework", "Cleansing & validation", "Near real-time ingestion"],
+  },
+  {
+    title: "Integrated Warehouse",
+    items: [
+      "Fully integrated data warehouse",
+      "Single source of truth",
+      "Event-driven performance",
+    ],
+  },
+  {
+    title: "Intelligence Outputs",
+    items: [
+      "Standard reporting",
+      "Analyses & Balanced Scorecard",
+      "Financial reporting & budgeting",
+    ],
+  },
+];
+---
+
+<section id="introduction" class="scroll-mt-24 bg-white py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <SectionHeading
+      eyebrow="Introduction"
+      title="An integrated performance-based system for capital markets"
+    />
+
+    <div class="mt-12 grid gap-12 lg:grid-cols-5">
+      <div class="reveal space-y-5 lg:col-span-2">
+        {
+          paragraphs.map((p) => (
+            <p class="leading-relaxed text-slate-600">{p}</p>
+          ))
+        }
+      </div>
+
+      <!-- Platform pipeline (replaces legacy chart_1.png) -->
+      <div class="reveal lg:col-span-3" style="--reveal-delay: 120ms">
+        <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-card sm:p-8">
+          <p class="font-mono text-xs font-semibold tracking-widest text-slate-500 uppercase">Platform architecture</p>
+
+          <ol class="mt-6 grid gap-4 sm:grid-cols-2">
+            {
+              pipeline.map((stage, i) => (
+                <li class="relative rounded-2xl border border-slate-200 bg-white p-5 shadow-card">
+                  <span class="font-mono text-[11px] font-semibold text-brand-600">0{i + 1}</span>
+                  <h3 class="mt-1 font-display text-base font-bold text-navy-900">{stage.title}</h3>
+                  <ul class="mt-3 space-y-1.5">
+                    {stage.items.map((item) => (
+                      <li class="flex items-start gap-2 text-sm text-slate-600">
+                        <svg class="mt-0.5 shrink-0 text-brand-600" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ))
+            }
+          </ol>
+
+          <p class="mt-5 flex items-center gap-2 text-xs font-medium text-slate-500">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M21 3v6h-6"/></svg>
+            Continuous feedback loop — outputs refine the models in near real time.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
